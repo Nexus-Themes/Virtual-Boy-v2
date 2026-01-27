@@ -4,26 +4,40 @@
   --font-display: 'Press Start 2P', monospace;
 }
 
-/* Sass-computed fallbacks so the theme works even without color-mix support */
 :root {
   /* Runtime-configurable RGB components (numbers) */
-  --accent-r: 255;
-  --accent-g: 0;
-  --accent-b: 0;
-  /* Color outputs (fallback to Sass-computed values) */
   --accent: rgb(255, 0, 0);
   --accent-dim: #cc0000;
-  --accent-dark: #990000;
+  --accent-dimmer: #990000;
+  --accent-dark: rgb(89.25, 0, 0);
+  --accent-slightly-darker: rgb(76.5, 0, 0);
+  --accent-darker: #330000;
+  --accent-darkest: rgb(25.5, 0, 0);
   --accent-muted: rgb(216.75, 38.25, 38.25);
 }
 
-/* If the browser supports color-mix, derive variants at runtime from the CSS RGB vars */
 @supports (color: color-mix(in oklab, red, blue)) {
   :root {
-    --accent: rgb(var(--accent-r, 255), var(--accent-g, 0), var(--accent-b, 0));
+    --accent-50: color-mix(in oklab, var(--accent) 92%, white 8%);
+    --accent-100: color-mix(in oklab, var(--accent) 85%, white 15%);
+    --accent-200: color-mix(in oklab, var(--accent) 70%, white 30%);
+    --accent-300: color-mix(in oklab, var(--accent) 55%, white 45%);
+    --accent-400: color-mix(in oklab, var(--accent) 40%, white 60%);
+    --accent-500: var(--accent);
+    --accent-600: color-mix(in oklab, var(--accent) 85%, black 15%);
+    --accent-700: color-mix(in oklab, var(--accent) 70%, black 30%);
+    --accent-800: color-mix(in oklab, var(--accent) 50%, black 50%);
+    --accent-900: color-mix(in oklab, var(--accent) 30%, black 70%);
     --accent-dim: color-mix(in oklab, var(--accent) 80%, #000 20%);
-    --accent-dark: color-mix(in oklab, var(--accent) 60%, #000 40%);
+    --accent-dimmer: color-mix(in oklab, var(--accent) 60%, #000 40%);
+    --accent-dimmest: color-mix(in oklab, var(--accent) 40%, #000 50%);
+    --accent-dark: color-mix(in oklab, var(--accent) 35%, #000 65%);
+    --accent-slightly-darker: color-mix(in oklab, var(--accent) 30%, #000 70%);
+    --accent-darker: color-mix(in oklab, var(--accent) 20%, #000 80%);
+    --accent-darkest: color-mix(in oklab, var(--accent) 10%, #000 90%);
     --accent-muted: color-mix(in oklab, var(--accent) 65%, #808080 35%);
+    /* Foreground computed at runtime when supported; falls back to the Sass-chosen value above */
+    --accent-foreground: color-contrast(var(--accent) vs white, black);
   }
 }
 .appMount__51fd7:not(:has(.theme-midnight))::before {
@@ -37,12 +51,129 @@
   z-index: 10000;
 }
 
-.bar_c38106 {
-  border-radius: var(--global-border-radius);
-  border-color: var(--accent) !important;
-  color: var(--accent) !important;
+.guilds__5e434 {
+  border-right-color: var(--accent);
+}
+
+.content__5e434 {
+  border: 1px solid var(--accent);
+}
+
+.chat_f75fb0 .chatContent_f75fb0, .chat_f75fb0 .form_f75fb0 {
+  border: 1px solid var(--accent);
+}
+.chat_f75fb0 .chatContent_f75fb0 .form_f75fb0, .chat_f75fb0 .form_f75fb0 .form_f75fb0 {
+  padding-inline: 0;
+  margin-bottom: 0;
+}
+.chat_f75fb0 .chatContent_f75fb0 .form_f75fb0 .channelTextArea_f75fb0, .chat_f75fb0 .form_f75fb0 .form_f75fb0 .channelTextArea_f75fb0 {
+  margin-bottom: 0;
+  box-shadow: inset 0 0 0 1px var(--accent);
 }
 
 :root {
   --global-border-radius: 0;
+}
+
+* {
+  border-radius: var(--global-border-radius) !important;
+}
+
+.guilds__5e434 {
+  background-color: var(--accent-dimmer);
+}
+
+.sidebarList__5e434 .container__2637a {
+  background-color: var(--accent-dark);
+}
+.sidebarList__5e434 .container__2637a .containerDefault_c69b6d {
+  box-shadow: inset 0 0 0 1px var(--accent);
+  background-color: var(--accent-slightly-darker);
+}
+.sidebarList__5e434 .container__2637a .containerDefault_c69b6d:has(.selectedChannel_c69b6d) {
+  background-color: var(--accent-dimmer);
+}
+.sidebarList__5e434 .container__2637a .containerDefault_c69b6d:hover {
+  background-color: var(--accent-dimmest);
+}
+.sidebarList__5e434 .container__2637a .containerDefault_c69b6d .link__2ea32 {
+  background: none !important;
+}
+.sidebarList__5e434 .container__2637a .containerDefault_c69b6d:has(.unread__2ea32) .unread__2ea32 {
+  background-color: var(--accent);
+  z-index: 1;
+  will-change: transform, opacity;
+  translate: none;
+}
+.sidebarList__5e434 .container__2637a .containerDefault_c69b6d:has(.unread__2ea32) .unread__2ea32::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: 2px solid var(--accent);
+  background: transparent;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  animation: unread-wave 3s ease-out infinite;
+}
+.sidebarList__5e434 .container__2637a .containerDefault_c69b6d:has(.mentionsBadge__933a1) .numberBadge__2b1f5 {
+  will-change: transform, opacity;
+  background: var(--accent) !important;
+  translate: none;
+}
+.sidebarList__5e434 .container__2637a .containerDefault_c69b6d:has(.mentionsBadge__933a1) .numberBadge__2b1f5::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 50%;
+  border-radius: 0;
+  border: 2px solid var(--accent);
+  background: transparent;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: -1;
+  animation: unread-wave 1s ease-out infinite;
+}
+
+@keyframes unread-wave {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(2.6);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.6);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .unread__2ea32,
+  .unread__2ea32::after {
+    animation: none !important;
+  }
+  .mentionsBadge__933a1,
+  .mentionsBadge__933a1::after {
+    animation: none !important;
+  }
+}
+.chat_f75fb0 .title_f75fb0, .chat_f75fb0 .members_c8ffbb {
+  background-color: var(--accent-slightly-darker);
+}
+.chat_f75fb0 .title_f75fb0 .children__9293f::after, .chat_f75fb0 .members_c8ffbb .children__9293f::after {
+  background: none !important;
+}
+.chat_f75fb0 .chatContent_f75fb0 {
+  background-color: var(--accent-darkest);
+}
+.chat_f75fb0 .chatContent_f75fb0 .channelTextArea_f75fb0 .scrollableContainer__74017 {
+  background-color: var(--accent-dark) !important;
 }
