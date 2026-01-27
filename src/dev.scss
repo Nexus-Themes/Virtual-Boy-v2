@@ -1,0 +1,14 @@
+// Dev mode
+@use "./main.scss";
+
+.base__5e434:before {
+    content: "Virtual Boy v2 " var(--theme-version);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: var(--accent);
+    color: white;
+    padding: 0.2em 0.5em;
+    font-size: 0.75em;
+    z-index: 10000;
+}

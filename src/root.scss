@@ -1,0 +1,8 @@
+// The "root" file that will be included in the dev and public files.
+// Anything in here will be a 1-1 copy.
+@use "./imports/fonts";
+@use "./theme/main";
+:root {
+	--theme-version: "0.1-dev";
+	--accent: #f38ba8;
+}

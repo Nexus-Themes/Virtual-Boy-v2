@@ -1,0 +1,6 @@
+@use "./appframe";
+
+$globabl-border-radius: 0!default;
+:root {
+  --global-border-radius: #{$globabl-border-radius};
+}

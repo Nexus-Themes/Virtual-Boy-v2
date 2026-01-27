@@ -1,0 +1,47 @@
+// Main variables -- Fallback if user config is empty
+
+// Configurable accent color (override these SCSS vars or runtime CSS vars)
+$accent-r: 255 !default;
+$accent-g: 0 !default;
+$accent-b: 0 !default;
+$accent: rgb($accent-r, $accent-g, $accent-b);
+
+/* Sass-computed fallbacks so the theme works even without color-mix support */
+$accent-dim: mix(#000, $accent, 20%) !default;
+$accent-dark: mix(#000, $accent, 40%) !default;
+$accent-muted: desaturate($accent, 30%) !default;
+
+:root {
+    /* Runtime-configurable RGB components (numbers) */
+    --accent-r: #{$accent-r};
+    --accent-g: #{$accent-g};
+    --accent-b: #{$accent-b};
+
+    /* Color outputs (fallback to Sass-computed values) */
+    --accent: #{$accent};
+    --accent-dim: #{$accent-dim};
+    --accent-dark: #{$accent-dark};
+    --accent-muted: #{$accent-muted};
+}
+
+/* If the browser supports color-mix, derive variants at runtime from the CSS RGB vars */
+@supports (color: color-mix(in oklab, red, blue)) {
+    :root {
+        --accent: rgb(var(--accent-r, 255), var(--accent-g, 0), var(--accent-b, 0));
+        --accent-dim: color-mix(in oklab, var(--accent) 80%, #000 20%);
+        --accent-dark: color-mix(in oklab, var(--accent) 60%, #000 40%);
+        --accent-muted: color-mix(in oklab, var(--accent) 65%, #808080 35%);
+    }
+}
+
+// Warn users that arent on Onyx builtin
+.appMount__51fd7:not(:has(.theme-midnight))::before {
+    content: "⚠ UNSUPPORTED SYSTEM THEME ⚠\000AVirtual Boy is designed to be used with the Onyx System theme. Please switch to Onyx System theme for the best experience.";
+    white-space: pre-wrap;
+    text-align: center;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 0.2em 0.5em;
+    font-size: 0.75em;
+    z-index: 10000;
+}
