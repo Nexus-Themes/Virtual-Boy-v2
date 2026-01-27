@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+:root {
+  --font-primary: 'Press Start 2P', monospace;
+  --font-display: 'Press Start 2P', monospace;
+}
+
+/* Sass-computed fallbacks so the theme works even without color-mix support */
+:root {
+  /* Runtime-configurable RGB components (numbers) */
+  --accent-r: 255;
+  --accent-g: 0;
+  --accent-b: 0;
+  /* Color outputs (fallback to Sass-computed values) */
+  --accent: rgb(255, 0, 0);
+  --accent-dim: #cc0000;
+  --accent-dark: #990000;
+  --accent-muted: rgb(216.75, 38.25, 38.25);
+}
+
+/* If the browser supports color-mix, derive variants at runtime from the CSS RGB vars */
+@supports (color: color-mix(in oklab, red, blue)) {
+  :root {
+    --accent: rgb(var(--accent-r, 255), var(--accent-g, 0), var(--accent-b, 0));
+    --accent-dim: color-mix(in oklab, var(--accent) 80%, #000 20%);
+    --accent-dark: color-mix(in oklab, var(--accent) 60%, #000 40%);
+    --accent-muted: color-mix(in oklab, var(--accent) 65%, #808080 35%);
+  }
+}
+.appMount__51fd7:not(:has(.theme-midnight))::before {
+  content: "⚠ UNSUPPORTED SYSTEM THEME ⚠\aVirtual Boy is designed to be used with the Onyx System theme. Please switch to Onyx System theme for the best experience.";
+  white-space: pre-wrap;
+  text-align: center;
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 0.2em 0.5em;
+  font-size: 0.75em;
+  z-index: 10000;
+}
+
+.bar_c38106 {
+  border-radius: var(--global-border-radius);
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+:root {
+  --global-border-radius: 0;
+}
