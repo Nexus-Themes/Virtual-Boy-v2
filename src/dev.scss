@@ -1,5 +1,8 @@
 // Dev mode
+@use "./base.scss";
 @use "./main.scss";
+@use "./root.scss";
+@use "./dist.scss";
 
 .base__5e434:before {
     content: "Virtual Boy v2 " var(--theme-version);
@@ -11,4 +14,11 @@
     padding: 0.2em 0.5em;
     font-size: 0.75em;
     z-index: 10000;
+    display: block;
+    pointer-events: auto;
+    transition: opacity 0.25s ease;
+}
+
+.base__5e434:before:hover {
+    opacity: 0.2 !important;
 }

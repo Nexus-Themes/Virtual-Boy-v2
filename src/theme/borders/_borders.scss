@@ -1,0 +1,8 @@
+@use "./appframe";
+@use "./mainview";
+:root {
+    --global-border-radius: 0;
+}
+* {
+    border-radius: var(--global-border-radius)!important;
+}

@@ -1,36 +1,51 @@
 // Main variables -- Fallback if user config is empty
 
 // Configurable accent color (override these SCSS vars or runtime CSS vars)
-$accent-r: 255 !default;
-$accent-g: 0 !default;
-$accent-b: 0 !default;
-$accent: rgb($accent-r, $accent-g, $accent-b);
+$accent: rgb(255, 0, 0) !default; // Default to red
 
-/* Sass-computed fallbacks so the theme works even without color-mix support */
 $accent-dim: mix(#000, $accent, 20%) !default;
-$accent-dark: mix(#000, $accent, 40%) !default;
+$accent-dimmer: mix(#000, $accent, 40%) !default;
+$accent-dimmest: mix(#000, $accent, 50%) !default;
+$accent-dark: mix(#000, $accent, 65%) !default;
+$accent-slightly-darker: mix(#000, $accent, 70%) !default;
+$accent-darker: mix(#000, $accent, 80%) !default;
+$accent-darkest: mix(#000, $accent, 90%) !default;
 $accent-muted: desaturate($accent, 30%) !default;
-
 :root {
     /* Runtime-configurable RGB components (numbers) */
-    --accent-r: #{$accent-r};
-    --accent-g: #{$accent-g};
-    --accent-b: #{$accent-b};
-
-    /* Color outputs (fallback to Sass-computed values) */
     --accent: #{$accent};
     --accent-dim: #{$accent-dim};
+    --accent-dimmer: #{$accent-dimmer};
     --accent-dark: #{$accent-dark};
+    --accent-slightly-darker: #{$accent-slightly-darker};
+    --accent-darker: #{$accent-darker};
+    --accent-darkest: #{$accent-darkest};
     --accent-muted: #{$accent-muted};
 }
-
-/* If the browser supports color-mix, derive variants at runtime from the CSS RGB vars */
 @supports (color: color-mix(in oklab, red, blue)) {
     :root {
-        --accent: rgb(var(--accent-r, 255), var(--accent-g, 0), var(--accent-b, 0));
+        --accent-50: color-mix(in oklab, var(--accent) 92%, white 8%);
+        --accent-100: color-mix(in oklab, var(--accent) 85%, white 15%);
+        --accent-200: color-mix(in oklab, var(--accent) 70%, white 30%);
+        --accent-300: color-mix(in oklab, var(--accent) 55%, white 45%);
+        --accent-400: color-mix(in oklab, var(--accent) 40%, white 60%);
+        --accent-500: var(--accent);
+        --accent-600: color-mix(in oklab, var(--accent) 85%, black 15%);
+        --accent-700: color-mix(in oklab, var(--accent) 70%, black 30%);
+        --accent-800: color-mix(in oklab, var(--accent) 50%, black 50%);
+        --accent-900: color-mix(in oklab, var(--accent) 30%, black 70%);
+
         --accent-dim: color-mix(in oklab, var(--accent) 80%, #000 20%);
-        --accent-dark: color-mix(in oklab, var(--accent) 60%, #000 40%);
+        --accent-dimmer: color-mix(in oklab, var(--accent) 60%, #000 40%);
+        --accent-dimmest: color-mix(in oklab, var(--accent) 40%, #000 50%);
+        --accent-dark: color-mix(in oklab, var(--accent) 35%, #000 65%);
+        --accent-slightly-darker: color-mix(in oklab, var(--accent) 30%, #000 70%);
+        --accent-darker: color-mix(in oklab, var(--accent) 20%, #000 80%);
+        --accent-darkest: color-mix(in oklab, var(--accent) 10%, #000 90%);
         --accent-muted: color-mix(in oklab, var(--accent) 65%, #808080 35%);
+
+        /* Foreground computed at runtime when supported; falls back to the Sass-chosen value above */
+        --accent-foreground: color-contrast(var(--accent) vs white, black);
     }
 }
 

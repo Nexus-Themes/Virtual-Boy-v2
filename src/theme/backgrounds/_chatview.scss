@@ -1,0 +1,14 @@
+.chat_f75fb0 {
+    .title_f75fb0, .members_c8ffbb {
+        background-color: var(--accent-slightly-darker);
+        .children__9293f::after {
+            background: none!important;
+        }
+    }
+    .chatContent_f75fb0 {
+        background-color: var(--accent-darkest);
+        .channelTextArea_f75fb0 .scrollableContainer__74017 {
+            background-color: var(--accent-dark)!important;
+        }
+    }
+}
