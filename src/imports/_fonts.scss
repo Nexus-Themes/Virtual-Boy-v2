@@ -1,8 +1,9 @@
-// Get the font
+// Default Google Font: Press Start 2P
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-// Set the font
+// Set Fallback font if no custom font is defined
 :root {
-    --font-primary: 'Press Start 2P', monospace;
-    --font-display: 'Press Start 2P', monospace;
+    --custom-font: 'Press Start 2P', monospace;
+    --font-primary: var(--custom-font);
+    --font-display: var(--custom-font);
 }

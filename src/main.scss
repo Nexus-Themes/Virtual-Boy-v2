@@ -13,7 +13,14 @@
                                                                                                    ░░░░░░                                 
 */
 
-/* Root Variables */
+/* Theme Settings */
+/* Here, You can change certain aspects of the theme to your liking. */
 :root {
-	--accent: #ff0000; /* Change this to your desired accent color */
+	--accent: #ff0000; /* Change this to your desired accent color. Default is #ff0000.
+                       Supported Formats: Hex, RGB, HSL and basic colors defined in the CSS standard.
+                       Values using transparency are not recommended. */
+  --custom-font: "Press Start 2P", Monospace; /* Change this to your desired font. Default is "Press Start 2P", Monospace.
+                                              Locally installed fonts and any web fonts are supported. Monospace fonts are reccomended.
+                                              When using web-fonts, make sure to include an import link at the top of this file.*/
+  
 }
