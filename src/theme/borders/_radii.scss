@@ -1,0 +1,21 @@
+:root {
+    --global-border-radius: 0;
+    --radius-none: var(--global-border-radius);
+    --radius-xs: var(--global-border-radius);
+    --radius-sm: var(--global-border-radius);
+    --radius-md: var(--global-border-radius);
+    --radius-lg: var(--global-border-radius);
+    --radius-xl: var(--global-border-radius);
+    --radius-xxl: var(--global-border-radius);
+    --radius-round: var(--global-border-radius);
+}
+
+// Message input box
+.form_f75fb0 .scrollableContainer__74017 {
+    border-radius: var(--global-border-radius);
+}
+
+// (Most) popouts (hopefully)
+.menu_c1e9c4, .container_d9c882, .container_fc561d, .container_fc561d .friendRequestsButton__523aa {
+    border-radius: var(--global-border-radius);
+}

@@ -1,8 +1,10 @@
 @use "./appframe";
 @use "./mainview";
-:root {
-    --global-border-radius: 0;
-}
+@use "./radii";
+
 * {
-    border-radius: var(--global-border-radius)!important;
+    // ? This breaks Profile Modals for some reason. Probably not a good idea to use a wildcard selector anyway.
+    // ? There may be a better way to set rounding to 0 globally without breaking other things.
+    // TODO: Try Discords own radii vars or manually select elements to set border-radius to 0
+    // border-radius: var(--global-border-radius)!important;
 }
