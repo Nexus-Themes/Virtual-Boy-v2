@@ -1,0 +1,64 @@
+.unread__2ea32, .item__58105 {
+    background-color: var(--accent);
+    z-index: 1;
+    will-change: transform, opacity;
+    translate: none;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        border: 2px solid var(--accent);
+        background: transparent;
+        opacity: 0.9;
+        pointer-events: none;
+        z-index: 0;
+        animation: unread-wave 3s ease-out infinite;
+    }
+}
+.numberBadge__2b1f5 {
+    will-change: transform, opacity;
+    background: var(--accent)!important;
+    translate: none;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 50%;
+        height: 50%;
+        border-radius: 0;
+        border: 2px solid var(--accent);
+        background: transparent;
+        opacity: 0.9;
+        pointer-events: none;
+        z-index: -1;
+        animation: unread-wave 1s ease-out infinite;
+    }
+}
+
+
+@keyframes unread-wave {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.9;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(2.6);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.6);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .unread__2ea32, .item__58105,
+    .unread__2ea32::after, .item__58105::after { animation: none !important; }
+    .mentionsBadge__933a1,
+    .mentionsBadge__933a1::after { animation: none !important; }
+}
