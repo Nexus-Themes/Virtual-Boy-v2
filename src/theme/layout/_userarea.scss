@@ -1,0 +1,27 @@
+// Kill empty padding under user area
+.sidebar__5e434:after{
+    display: none !important;
+}
+
+// Make user area fit inside channels list
+.panels__5e434 {
+    bottom: 0;
+    inset-inline-start: 1px;
+    margin-left: var(--custom-guild-list-width);
+    width: calc(100% - var(--custom-guild-list-width)) !important;
+    .actionButtons_e131a9 button {
+        padding: 0;
+    }
+}
+.guilds__5e434 {
+    margin-bottom: 0 !important;
+}
+
+// Kill the stupid dropdown menus
+.panels__5e434 {
+    .micButtonParent__37e49 {
+        .buttonChevron__37e49 {
+            display: none !important;
+        }
+    }
+}
