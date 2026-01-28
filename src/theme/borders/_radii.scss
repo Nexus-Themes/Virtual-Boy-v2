@@ -19,3 +19,24 @@
 .menu_c1e9c4, .container_d9c882, .container_fc561d, .container_fc561d .friendRequestsButton__523aa {
     border-radius: var(--global-border-radius);
 }
+
+// Unread pills in server list
+.item__58105 {
+    border-radius: var(--global-border-radius);
+}
+
+// Server Icons
+.wrapper_cc5dd2 foreignObject {
+    mask-image: none;
+}
+
+// Member Avatars
+.avatar_c19a55, .wrapper__44b0c {
+    border-radius: var(--global-border-radius);
+}
+.wrapper__44b0c .mask__44b0c foreignObject {
+    mask-image: none;
+    .avatar__44b0c {
+        border-radius: var(--global-border-radius)!important;
+    }
+}
