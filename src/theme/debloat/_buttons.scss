@@ -1,0 +1,52 @@
+@property --gif-button {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@property --sticker-button {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@property --emoji-button {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@property --apps-button {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--gif-button: off) {
+    .buttons__74017 {
+        .button__74017:has(svg path[d=" M-7,-10 C-8.656999588012695,-10 -10,-8.656999588012695 -10,-7 C-10,-7 -10,7 -10,7 C-10,8.656999588012695 -8.656999588012695,10 -7,10 C-7,10 7,10 7,10 C8.656999588012695,10 10,8.656999588012695 10,7 C10,7 10,-7 10,-7 C10,-8.656999588012695 8.656999588012695,-10 7,-10 C7,-10 -7,-10 -7,-10z"]) {
+            display: none !important;
+        }
+    }
+}
+@container body style(--sticker-button: off) {
+    .buttons__74017 {
+        .button__74017.stickerButton__74017 {
+            display: none !important;
+        }
+    }
+}
+@container body style(--emoji-button: off) {
+    .buttons__74017 {
+        .button__74017.emojiButton__74017 {
+            display: none !important;
+        }
+    }
+}
+@container body style(--apps-button: off) {
+    .buttons__74017 {
+        .app-launcher-entrypoint{
+            display: none !important;
+        }
+    }
+}

@@ -16,11 +16,27 @@
 /* Theme Settings */
 /* Here, You can change certain aspects of the theme to your liking. */
 :root {
+  /* -= Base Settings =- */
 	--accent: #ff0000; /* Change this to your desired accent color. Default is #ff0000.
                        Supported Formats: Hex, RGB, HSL and basic colors defined in the CSS standard.
                        Values using transparency are not recommended. */
   --custom-font: "Press Start 2P", Monospace; /* Change this to your desired font. Default is "Press Start 2P", Monospace.
                                               Locally installed fonts and any web fonts are supported. Monospace fonts are reccomended.
                                               When using web-fonts, make sure to include an import link at the top of this file.*/
-  
+}
+body {                                              
+  /* -= Debloat Options =- */
+  /* Here, You can select to hide various elements within the app that can be considered "bloat". */
+  /* Some of these may require Theme Attributes to be enabled in order to work properly. */
+  --nitro-upsell: on; /* Any Element that entices you to get nitro. 
+                      Values: on to show, off to hide. Default: on. */
+  /* Hide Individual Buttons throughout the app. */
+  --gif-button: on; /* The GIF button in the message box.
+                    Values: on to show, off to hide. Default: on. */
+  --sticker-button: on; /* The Sticker button in the message box.
+                        Values: on to show, off to hide. Default: on. */
+  --emoji-button: on; /* The Emoji button in the message box.
+                      Values: on to show, off to hide. Default: on. */
+  --apps-button: on; /* The Apps button in the message box.
+                     Values: on to show, off to hide. Default: on. */  
 }
