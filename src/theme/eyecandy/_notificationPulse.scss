@@ -19,7 +19,7 @@
         animation: unread-wave 3s ease-out infinite;
     }
 }
-.numberBadge__2b1f5 {
+.numberBadge__2b1f5, .unreadMentionsBar_ef3116 {
     will-change: transform, opacity;
     background: var(--accent)!important;
     translate: none;
@@ -59,6 +59,6 @@
 @media (prefers-reduced-motion: reduce) {
     .unread__2ea32, .item__58105,
     .unread__2ea32::after, .item__58105::after { animation: none !important; }
-    .mentionsBadge__933a1,
-    .mentionsBadge__933a1::after { animation: none !important; }
+    .mentionsBadge__933a1, .unreadMentionsBar_ef3116,
+    .mentionsBadge__933a1::after, .unreadMentionsBar_ef3116::after { animation: none !important; }
 }
