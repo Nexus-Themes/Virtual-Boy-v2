@@ -1,0 +1,6 @@
+- [ ] Settings Panel overhaul
+- [ ] Borders in settings page and other miscelaneous popouts
+- [ ] Multi-view styling (threads/forums)
+- [ ] User Area extra panels (May need further testing on Windows)
+- [ ] Optional Message Boxes styling for sent messages
+- [ ] Optional Right Aligned styling for Self-Sent Messages (Will Require Message Boxes)
