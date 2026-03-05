@@ -73,7 +73,7 @@ html:not(.theme-midnight) .appMount__51fd7::before {
 }
 
 // Warn users that have enabled Windows buttons that they are on an unsupported configuration, assuming they havent disabled the warning.
-html.platform-web {
+html.platform-win {
     @container body style(--disable-startup-warning: off) {
         .appMount__51fd7::after {
             content: "⚠ WINDOWS PLATFORM DETECTED ⚠\000AWindows support for Virtual Boy considered experimental.\000A And things like the Application Titlebar WILL NOT work as expected.\000A Please enable the Native Window Frame option for the best experience.";
