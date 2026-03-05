@@ -49,13 +49,19 @@ $accent-muted: desaturate($accent, 30%) !default;
     }
 }
 
+:root {
+    --text-brand: var(--accent)!important;
+    --control-brand-foreground: var(--accent)!important;
+}
+
 // Warn users that arent on Onyx builtin
 .appMount__51fd7:not(:has(.theme-midnight))::before {
-    content: "⚠ UNSUPPORTED SYSTEM THEME ⚠\000AVirtual Boy is designed to be used with the Onyx System theme. Please switch to Onyx System theme for the best experience.";
+    content: "⚠ UNSUPPORTED SYSTEM THEME ⚠\000AVirtual Boy is designed to be used with the Onyx System theme.\000APlease switch to Onyx System theme for the best experience.";
     white-space: pre-wrap;
     text-align: center;
-    background: rgba(255, 0, 0, 0.8);
+    background: rgba(255, 0, 0, 0.6);
     color: white;
+    pointer-events: none;
     padding: 0.2em 0.5em;
     font-size: 0.75em;
     z-index: 10000;

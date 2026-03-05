@@ -1,0 +1,26 @@
+.container__8a031 .modalContent_e44912 .modalContentInner_e44912{
+    box-shadow: inset 0 0 0 1px var(--accent);
+    .sidebar__409aa {
+        background-color: var(--accent-slightly-darker);
+        // background-color: var(--accent-darker);
+        .fixedContent__409aa::after {
+            display: none;
+        }
+    }
+    .nav__409aa .section__409aa {
+        gap: 0;
+        // background-color: var(--accent-darker);
+        // background-color: var(--accent-slightly-darker);
+
+        .item_caf372 {
+            box-shadow: inset 0 0 0 1px var(--accent);
+            background-color: var(--accent-dark);
+            &:hover {
+                background-color: var(--accent-dimmer);
+            }
+            &.active_caf372 {
+                background-color: var(--accent-dim);
+            }
+        }
+    }
+}
