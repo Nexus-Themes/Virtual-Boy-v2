@@ -27,3 +27,21 @@
 .container__8a031 .modalContent_e44912 .modalContentInner_e44912 .container_abd9a8 .sidebar__409aa {
     box-shadow: inset 0 0 0 1px var(--accent);
 }
+
+
+.content_e9e3ed {
+    background-color: var(--accent-darker);
+    box-shadow: inset 0 0 0 1px var(--accent);
+    button {
+        background-color: var(--accent-dark);
+        box-shadow: inset 0 0 0 1px var(--accent);
+        &:hover {
+            background-color: var(--accent-dimmer);
+        }
+    }
+
+    .contentHeader_e9e3ed {
+        background-color: var(--accent-dark);
+        box-shadow: inset 0 0 0 1px var(--accent);
+    }
+}
