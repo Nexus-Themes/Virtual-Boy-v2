@@ -1,0 +1,24 @@
+// Adjust titlebar button placement and top bar titlebar
+.bar_c38106 {
+    margin-top: 40px;
+    z-index: 10000;
+    background: none !important;
+    justify-content: right;
+    pointer-events: none;
+    .leading_c38106, .title_edbb22 {
+        display: none !important;
+    }
+    .trailing_c38106 {
+        pointer-events: all;
+    }
+}
+
+// Fix channel header toolbar placement
+.toolbar__9293f {
+    margin-right: 130px;
+}
+
+// Fix mainview placement
+.base__5e434 {
+    margin-top: -35px;
+}
