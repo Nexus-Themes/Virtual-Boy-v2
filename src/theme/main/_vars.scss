@@ -55,7 +55,7 @@ $accent-muted: desaturate($accent, 30%) !default;
 }
 
 // Warn users that arent on Onyx builtin
-.appMount__51fd7:not(:has(.theme-midnight))::before {
+html:not(.theme-midnight) .appMount__51fd7::before {
     content: "⚠ UNSUPPORTED SYSTEM THEME ⚠\000AVirtual Boy is designed to be used with the Onyx System theme.\000APlease switch to Onyx System theme for the best experience.";
     white-space: pre-wrap;
     text-align: center;
@@ -65,4 +65,27 @@ $accent-muted: desaturate($accent, 30%) !default;
     padding: 0.2em 0.5em;
     font-size: 0.75em;
     z-index: 10000;
+}
+
+// Warn users that have enabled Windows buttons that they are on an unsupported configuration
+html.platform-win .appMount__51fd7::after {
+    content: "⚠ WINDOWS PLATFORM DETECTED ⚠\000AWindows support for Virtual Boy considered experimental.\000A And things like the Application Titlebar WILL NOT work as expected.\000A Please enable the Native Window Frame option for the best experience.";
+    white-space: pre-wrap;
+    text-align: center;
+    background: rgba(255, 0, 0, 1);
+    color: white;
+    pointer-events: none;
+    padding: 0.2em 0.5em;
+    font-size: 0.75em;
+    z-index: 10000;
+    position: absolute;
+    width: 100%;
+    animation: fadeout 1s ease-out 10s forwards;
+    top: 0;
+}
+
+@keyframes fadeout {
+    to {
+        opacity: 0;
+    }
 }
