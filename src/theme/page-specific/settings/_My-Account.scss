@@ -1,0 +1,8 @@
+.content_e9e3ed:has(.accountProfileCard__1fed1) {
+    // ! sanity check
+    // background-color: var(--accent-dim);
+    .accountProfileCard__1fed1 {
+        background-color: var(--accent-dark);
+        box-shadow: inset 0 0 0 1px var(--accent);
+    }
+}
