@@ -26,11 +26,6 @@ Features of Virtual Boy v2 include:
 - [ ] Basic Vencord Addon Support
 - [ ] Replugged binaries?
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 26f71ef (Update README with license details)
 ## License
 
 This project is licensed under **CC BY-NC 4.0**.
@@ -43,7 +38,3 @@ You are free to:
 As long as:
 - You credit the original author (GH0STP4WZ/Nexus-Themes)
 - You do **not** use it for commercial purposes
-<<<<<<< HEAD
-=======
->>>>>>> 5b96687 (Update README with license details)
->>>>>>> 26f71ef (Update README with license details)
