@@ -5,3 +5,7 @@
 @use "./eyecandy/eyecandy";
 @use "./debloat/debloat";
 @use "./page-specific/settings/settings-root";
+
+body {
+    container-name: body;
+}
