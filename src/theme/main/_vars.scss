@@ -54,10 +54,6 @@ $accent-muted: desaturate($accent, 30%) !default;
     }
 }
 
-:root {
-    --text-brand: var(--accent)!important;
-    --control-brand-foreground: var(--accent)!important;
-}
 
 // Warn users that arent on Onyx builtin
 html:not(.theme-midnight) .appMount__51fd7::before {
