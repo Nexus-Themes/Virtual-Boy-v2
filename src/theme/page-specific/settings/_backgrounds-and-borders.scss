@@ -1,7 +1,7 @@
 .container__8a031 .modalContent_e44912 .modalContentInner_e44912{
     box-shadow: inset 0 0 0 1px var(--accent);
     .sidebar__409aa {
-        background-color: var(--accent-slightly-darker);
+        background-color: var(--accent-darker);
         // background-color: var(--accent-darker);
         .fixedContent__409aa::after {
             display: none;
@@ -23,4 +23,7 @@
             }
         }
     }
+}
+.container__8a031 .modalContent_e44912 .modalContentInner_e44912 .container_abd9a8 .sidebar__409aa {
+    box-shadow: inset 0 0 0 1px var(--accent);
 }

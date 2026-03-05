@@ -73,10 +73,12 @@ html:not(.theme-midnight) .appMount__51fd7::before {
 }
 
 // Warn users that have enabled Windows buttons that they are on an unsupported configuration, assuming they havent disabled the warning.
-html.platform-win {
+html.platform-web {
     @container body style(--disable-startup-warning: off) {
         .appMount__51fd7::after {
-            content: "⚠ WINDOWS PLATFORM DETECTED ⚠\000AWindows support for Virtual Boy considered experimental.\000A And things like the Application Titlebar WILL NOT work as expected.\000A Please enable the Native Window Frame option for the best experience.";
+            // You might wanna enable linewrapping on this one, its a long message.
+            // Also, Hi source code poker :3
+            content: "⚠ WINDOWS PLATFORM DETECTED ⚠\000AWindows support for Virtual Boy considered experimental.\000A And things like the Application Titlebar WILL NOT work as expected.\000A Please enable the Native Window Frame option for the best experience.\000A\000A You can disable this warning in the theme settings by changing the 'Disable Startup Warning' option.";
             white-space: pre-wrap;
             text-align: center;
             background: rgba(255, 0, 0, 1);
