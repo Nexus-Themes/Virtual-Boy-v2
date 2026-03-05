@@ -64,8 +64,8 @@ html:not(.theme-midnight) .appMount__51fd7::before {
 }
 
 @container body style(--disable-startup-warning: off) {
-  html.platform-win .appMount__51fd7::after {
-    content: "⚠ WINDOWS PLATFORM DETECTED ⚠\aWindows support for Virtual Boy considered experimental.\a And things like the Application Titlebar WILL NOT work as expected.\aPlease enable the Native Window Frame option for the best experience.";
+  html.platform-web .appMount__51fd7::after {
+    content: "⚠ WINDOWS PLATFORM DETECTED ⚠\aWindows support for Virtual Boy considered experimental.\a And things like the Application Titlebar WILL NOT work as expected.\aPlease enable the Native Window Frame option for the best experience.\a\aYou can disable this warning in the theme settings by changing the 'Disable Startup Warning' option.";
     white-space: pre-wrap;
     text-align: center;
     background: rgb(255, 0, 0);
@@ -246,6 +246,10 @@ html:not(.theme-midnight) .appMount__51fd7::before {
   margin-top: -35px;
 }
 
+.container__8a031 .modalContent_e44912 .sidebar__409aa .navScroller__409aa {
+  margin-left: -16px;
+}
+
 .unread__2ea32, .item__58105 {
   background-color: var(--accent);
   z-index: 1;
@@ -370,7 +374,7 @@ html:not(.theme-midnight) .appMount__51fd7::before {
   box-shadow: inset 0 0 0 1px var(--accent);
 }
 .container__8a031 .modalContent_e44912 .modalContentInner_e44912 .sidebar__409aa {
-  background-color: var(--accent-slightly-darker);
+  background-color: var(--accent-darker);
 }
 .container__8a031 .modalContent_e44912 .modalContentInner_e44912 .sidebar__409aa .fixedContent__409aa::after {
   display: none;
@@ -387,6 +391,10 @@ html:not(.theme-midnight) .appMount__51fd7::before {
 }
 .container__8a031 .modalContent_e44912 .modalContentInner_e44912 .nav__409aa .section__409aa .item_caf372.active_caf372 {
   background-color: var(--accent-dim);
+}
+
+.container__8a031 .modalContent_e44912 .modalContentInner_e44912 .container_abd9a8 .sidebar__409aa {
+  box-shadow: inset 0 0 0 1px var(--accent);
 }
 
 body {
