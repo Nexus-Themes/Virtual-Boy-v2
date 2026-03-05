@@ -41,12 +41,18 @@
     --accent-foreground: color-contrast(var(--accent) vs white, black);
   }
 }
+:root {
+  --text-brand: var(--accent)!important;
+  --control-brand-foreground: var(--accent)!important;
+}
+
 .appMount__51fd7:not(:has(.theme-midnight))::before {
-  content: "⚠ UNSUPPORTED SYSTEM THEME ⚠\aVirtual Boy is designed to be used with the Onyx System theme. Please switch to Onyx System theme for the best experience.";
+  content: "⚠ UNSUPPORTED SYSTEM THEME ⚠\aVirtual Boy is designed to be used with the Onyx System theme.\aPlease switch to Onyx System theme for the best experience.";
   white-space: pre-wrap;
   text-align: center;
-  background: rgba(255, 0, 0, 0.8);
+  background: rgba(255, 0, 0, 0.6);
   color: white;
+  pointer-events: none;
   padding: 0.2em 0.5em;
   font-size: 0.75em;
   z-index: 10000;
@@ -312,4 +318,27 @@
 }
 body {
   container-name: body;
+}
+
+.container__8a031 .modalContent_e44912 .modalContentInner_e44912 {
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+.container__8a031 .modalContent_e44912 .modalContentInner_e44912 .sidebar__409aa {
+  background-color: var(--accent-slightly-darker);
+}
+.container__8a031 .modalContent_e44912 .modalContentInner_e44912 .sidebar__409aa .fixedContent__409aa::after {
+  display: none;
+}
+.container__8a031 .modalContent_e44912 .modalContentInner_e44912 .nav__409aa .section__409aa {
+  gap: 0;
+}
+.container__8a031 .modalContent_e44912 .modalContentInner_e44912 .nav__409aa .section__409aa .item_caf372 {
+  box-shadow: inset 0 0 0 1px var(--accent);
+  background-color: var(--accent-dark);
+}
+.container__8a031 .modalContent_e44912 .modalContentInner_e44912 .nav__409aa .section__409aa .item_caf372:hover {
+  background-color: var(--accent-dimmer);
+}
+.container__8a031 .modalContent_e44912 .modalContentInner_e44912 .nav__409aa .section__409aa .item_caf372.active_caf372 {
+  background-color: var(--accent-dim);
 }
