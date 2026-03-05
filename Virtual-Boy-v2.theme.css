@@ -48,4 +48,9 @@ Values: on to show, off to hide. Default: on. */
 Values: on to show, off to hide. Default: on. */
   --apps-button: on; /* The Apps button in the message box.
 Values: on to show, off to hide. Default: on. */
+  /* -=========================================================================- */
+  /* -= Windows Specific Settings =- */
+  /* Windows Support is considered Experimental. Here are some Windows Specific Settings. */
+  --disable-startup-warning: off; /* Disable the warning about unsupported configuration on Windows. 
+Values: on to show, off to hide. Default: off. */
 }
